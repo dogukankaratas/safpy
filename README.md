@@ -1,4 +1,4 @@
 # safpy
 
-Python library for creating and reading SAF (Structural Analysis Format).
+Python library for working with SAF files (Structural Analysis Format).
 
