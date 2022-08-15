@@ -1,3 +1,4 @@
+from cmath import nan
 import pandas as pd
 
 class StructuralSchema():
@@ -342,6 +343,54 @@ class StructuralSchema():
         self.pointDict['Coordinate Y [m]'].append(self.pointY)
         self.pointDict['Coordinate Z [m]'].append(self.pointZ)
         self.pointDict['Id'].append(self.pointId)
+
+    def readExcel(self):
+        '''
+        Read an external xlsx file to define a StructuralSchema object.
+        '''
+
+        # read excel sheets
+        self.externalModel = pd.read_excel(r"C:\Users\KaratasD\Desktop\Folders\safpy\safGeometryTest.xlsx", sheet_name="Model", index_col=False)
+        self.externalProject = pd.read_excel(r"C:\Users\KaratasD\Desktop\Folders\safpy\safGeometryTest.xlsx", sheet_name="Project", index_col=False)
+        externalMaterials = pd.read_excel(r"C:\Users\KaratasD\Desktop\Folders\safpy\safGeometryTest.xlsx", sheet_name="StructuralMaterial")
+
+        # assign model information to object dictionary
+        if len(self.externalModel.columns) == 2:
+
+            self.modelResponses = self.externalModel.iloc[: ,1].to_list()
+
+            if self.externalModel.columns[1] == 'Unnamed: 1':
+                self.modelResponses.insert(0, nan)
+            else:
+                self.modelResponses.insert(0, self.externalModel.columns[1])
+        else:
+            pass
+
+        # assign project information to object dictionary
+        if len(self.externalProject.columns) == 2:
+
+            self.projectResponses = self.externalProject.iloc[: ,1].to_list()
+
+            if self.externalProject.columns[1] == 'Unnamed: 1':
+                self.projectResponses.insert(0, nan)
+            else:
+                self.projectResponses.insert(0, self.externalProject.columns[1])
+
+        else:
+            pass
+
+        # assign material information to the object dictionary
+        self.materialDict['Name'] = externalMaterials['Name'].to_list()
+        self.materialDict['Type'] = externalMaterials['Type'].to_list()
+        self.materialDict['Subtype'] = externalMaterials['Subtype'].to_list()
+        self.materialDict['Quality'] = externalMaterials['Quality'].to_list()
+        self.materialDict['Unit mass [kg/m3]'] = externalMaterials['Unit mass [kg/m3]'].to_list()
+        self.materialDict['E modulus [MPa]'] = externalMaterials['NaE modulus [MPa]me'].to_list()
+        self.materialDict['G modulus [MPa]'] = externalMaterials['G modulus [MPa]'].to_list()
+        self.materialDict['Poisson Coefficient'] = externalMaterials['Poisson Coefficient'].to_list()
+        self.materialDict['Thermal expansion [1/K]'] = externalMaterials['Thermal expansion [1/K]'].to_list()
+        self.materialDict['Design properties'] = externalMaterials['Design properties'].to_list()
+        self.materialDict['Id'] = externalMaterials['Id'].to_list()
 
     def exportExcel(self):
 
