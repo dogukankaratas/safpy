@@ -10,5 +10,5 @@ For detailed information please read the [documentation](https://www.saf.guide/e
 
 ## Why this library is useful? 
 
-
+Widely use structural analysis softwares (Dlubal, Sofistik, SCIA, Risa, IDEA Statica etc.) has native support for SAF files. This means you can automatize or parametrize your workflow with this softwares by using python.
 
