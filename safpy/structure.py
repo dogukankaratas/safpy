@@ -128,6 +128,165 @@ class StructuralSchema(Model, Project, Material, Section, Point):
             'Id' : []
         }
 
+        self.curveEdgeDict = {
+            'Name' : [],
+            '2D member' : [],
+            'Nodes' : [],
+            'Segments' : [],
+            'Id' : []
+        }
+
+        self.curveMemberDict = {
+            'Name': [],
+            'Type' : [],
+            'Cross section' : [],
+            'Arbitary definition' : [],
+            'Nodes' : [],
+            'Segments' : [],
+            'Begin node' : [],
+            'End node' : [],
+            'Internal nodes' : [],
+            'Length [m]' : [],
+            'Geometrical shape' : [],
+            'Parent ID' : [],
+            'LCS' : [],
+            'LCS Rotation [deg]' : [],
+            'Coordinate X [m]' : [],
+            'Coordinate Y [m]' : [],
+            'Coordinate Z [m]' : [],
+            'System line' : [],
+            'Eccentricity ey [mm]' : [],
+            'Eccentricity ez [mm]' : [],
+            'Layer' : [],
+            'Behaviour in analysis' : [],
+            'Color' : [],
+            'Id' : []
+        }
+
+        self.surfaceMemberDict = {
+            'Name' : [],
+            'Type' : [],
+            'Material' : [],
+            'Thickness type' : [],
+            'Thickness [mm]' : [],
+            'System plane at' : [],
+            'Nodes' : [],
+            'Internal nodes' : [],
+            'Edges' : [],
+            'Parent ID' : [],
+            'Layer' : [],
+            'LCS Type' : [],
+            'Coordinate X [m]' : [],
+            'Coordinate Y [m]' : [],
+            'Coordinate Z [m]' : [],
+            'LCS Rotation [deg]' : [],
+            'Eccentricity ez [mm]' : [],
+            'Shape' : [],
+            'Behavior in analysis' : [],
+            'Color' : [],
+            'Id' : []
+        }
+
+        self.surfaceMemberOpeningDict = {
+            'Name':[],
+            '2D Member':[],
+            'Nodes':[],
+            'Edges':[],
+            'Id':[]
+        }
+
+        self.storyDict = {
+            'Name' : [],
+            'Height level [m]' : [],
+            'Id' : []
+        }
+
+        self.pointSupportDict = {
+            'Name' : [],
+            'Type' : [],
+            'Node' : [],
+            'ux' : [],
+            'uy' : [],
+            'uz' : [],
+            'fix' : [],
+            'fiy' : [],
+            'fiz' : [],
+            'Stiffness X [MN/m]' : [],
+            'Stiffness Y [MN/m]' : [],
+            'Stiffness Z [MN/m]' : [],
+            'Stiffness Fix [MNm/rad]' : [],
+            'Stiffness Fix [MNm/rad]' : [],
+            'Stiffness Fiz [MNm/rad]' : [],
+            'Id' : []
+        }
+
+        self.edgeConnectionDict = {
+            'Name' : [],
+            'Type' : [],
+            '2D Member' : [],
+            'Edge' : [],
+            'ux' : [],
+            'uy' : [],
+            'uz' : [],
+            'fix' : [],
+            'fiy' : [],
+            'fiz' : [],
+            'Stiffness X [MN/m2]' : [],
+            'Stiffness Y [MN/m2]' : [],
+            'Stiffness Z [MN/m2]' : [],
+            'Stiffness Fix [MNm/rad/m]' : [],
+            'Stiffness Fiy [MNm/rad/m]' : [],
+            'Stiffness Fiz [MNm/rad/m]' : [],
+            'Coordinate system' : [],
+            'Coordinate definition' : [],
+            'Origin' : [],
+            'Start point [m]' : [],
+            'End point [m]' : [],
+            'Id' : []
+        }
+
+        self.connectsRigidMemberDict = {
+            'Name' : [],
+            'Node' : [],
+            '2D Members' : [],
+            'Edges' : [],
+            'Internal edge' : [],
+            '1D Members' : [],
+            'Type' : [],
+            'ux' : [],
+            'uy' : [],
+            'uz' : [],
+            'fix' : [],
+            'fiy' : [],
+            'fiz' : [],
+            'Stiffness X [MN/m2]' : [],
+            'Stiffness Y [MN/m2]' : [],
+            'Stiffness Z [MN/m2]' : [],
+            'Stiffness Fix [MNm/rad/m]' : [],
+            'Stiffness Fiy [MNm/rad/m]' : [],
+            'Stiffness Fiz [MNm/rad/m]' : [],
+            'Resistance Fiz [MNm/m]' : [],
+            'Id' : []
+        }
+
+        self.loadGroupDict = {
+            'Name' : [],
+            'Load group type' : [],
+            'Relation' : [],
+            'Load type' : [],
+            'Id' : []
+        }
+
+        self.loadCaseDict = {
+            'Name' : [],
+            'Description' : [],
+            'Action type' : [],
+            'Load group' : [],
+            'Load type' : [],
+            'Duration' : [],
+            'Id' : []
+        }
+
     def readExcel(self):
         '''
         Read an external xlsx file to define a StructuralSchema object.
