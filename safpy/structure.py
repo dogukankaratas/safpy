@@ -2,15 +2,16 @@ import pandas as pd
 import sys
 import os
 from cmath import nan
-
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
+
 from model import Model
 from project import Project
 from material import Material
 from section import Section
 from point import Point
+from curveEdge import CurveEdge
 
-class StructuralSchema(Model, Project, Material, Section, Point):
+class StructuralSchema(Model, Project, Material, Section, Point, CurveEdge):
 
     def __init__(self):
 
