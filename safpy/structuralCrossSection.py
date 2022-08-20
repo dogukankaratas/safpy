@@ -1,4 +1,4 @@
-class Section:
+class StructuralCrossSection:
 
     def __init__(self) -> None:
         pass

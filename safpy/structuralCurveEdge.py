@@ -1,4 +1,4 @@
-class CurveEdge:
+class StructuralCurveEdge:
 
     def __init__(self) -> None:
         pass

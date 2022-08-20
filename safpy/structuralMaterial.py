@@ -1,4 +1,4 @@
-class Material:
+class StructuralMaterial:
 
     def getMaterialInfo(self):
 

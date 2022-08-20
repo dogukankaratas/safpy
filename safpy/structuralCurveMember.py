@@ -1,4 +1,4 @@
-class CurveMember:
+class StructuralCurveMember:
 
     def __init__(self) -> None:
         pass

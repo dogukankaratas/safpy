@@ -1,4 +1,4 @@
-class Point:
+class StructuralPointConnection:
 
     def __init__(self) -> None:
         pass
